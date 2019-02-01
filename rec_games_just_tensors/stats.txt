@@ -1,0 +1,57 @@
+C:\Users\mdabb\AppData\Local\Programs\Python\Python36\python.exe "C:/Users/mdabb/Desktop/semester 9/advanced topics in RL 2/final project/workspace/pacman/pacman.py" -p AlphaBetaAgent -r -n 50 -l smallClassic -q -a depth=4
+Pacman emerges victorious! Score: 972
+Pacman emerges victorious! Score: 1745
+Pacman emerges victorious! Score: 946
+Pacman emerges victorious! Score: 943
+Pacman emerges victorious! Score: 972
+Pacman emerges victorious! Score: 1141
+Pacman emerges victorious! Score: 1182
+Pacman emerges victorious! Score: 1727
+Pacman emerges victorious! Score: 1155
+Pacman died! Score: -311
+Pacman emerges victorious! Score: 1339
+Pacman emerges victorious! Score: 1546
+Pacman emerges victorious! Score: 957
+Pacman died! Score: -371
+Pacman emerges victorious! Score: 1347
+Pacman emerges victorious! Score: 1369
+Pacman emerges victorious! Score: 941
+Pacman emerges victorious! Score: 1363
+Pacman emerges victorious! Score: 971
+Pacman emerges victorious! Score: 1178
+Pacman emerges victorious! Score: 1332
+Pacman emerges victorious! Score: 1375
+Pacman emerges victorious! Score: 1744
+Pacman emerges victorious! Score: 1339
+Pacman died! Score: -150
+Pacman emerges victorious! Score: 919
+Pacman emerges victorious! Score: 1370
+Pacman emerges victorious! Score: 1341
+Pacman emerges victorious! Score: 1363
+Pacman emerges victorious! Score: 1384
+Pacman emerges victorious! Score: 953
+Pacman emerges victorious! Score: 940
+Pacman emerges victorious! Score: 1343
+Pacman emerges victorious! Score: 1332
+Pacman emerges victorious! Score: 1355
+Pacman emerges victorious! Score: 968
+Pacman emerges victorious! Score: 1160
+Pacman emerges victorious! Score: 939
+Pacman emerges victorious! Score: 1559
+Pacman emerges victorious! Score: 1530
+Pacman died! Score: -327
+Pacman emerges victorious! Score: 1353
+Pacman emerges victorious! Score: 1366
+Pacman emerges victorious! Score: 867
+Pacman emerges victorious! Score: 1548
+Pacman emerges victorious! Score: 976
+Pacman emerges victorious! Score: 979
+Pacman emerges victorious! Score: 980
+Pacman emerges victorious! Score: 975
+Pacman emerges victorious! Score: 1532
+Average Score: 1109.14
+Scores:        972, 1745, 946, 943, 972, 1141, 1182, 1727, 1155, -311, 1339, 1546, 957, -371, 1347, 1369, 941, 1363, 971, 1178, 1332, 1375, 1744, 1339, -150, 919, 1370, 1341, 1363, 1384, 953, 940, 1343, 1332, 1355, 968, 1160, 939, 1559, 1530, -327, 1353, 1366, 867, 1548, 976, 979, 980, 975, 1532
+Win Rate:      46/50 (0.92)
+Record:        Win, Win, Win, Win, Win, Win, Win, Win, Win, Loss, Win, Win, Win, Loss, Win, Win, Win, Win, Win, Win, Win, Win, Win, Win, Loss, Win, Win, Win, Win, Win, Win, Win, Win, Win, Win, Win, Win, Win, Win, Win, Loss, Win, Win, Win, Win, Win, Win, Win, Win, Win
+
+Process finished with exit code 0
