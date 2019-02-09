@@ -1,4 +1,4 @@
-# RL-None-Optimal-Experts-project
+# pacman IRL-None-Optimal-Experts-project
 
 this repository implements the ideas and algorithms proposed in Xingyu Wang Diego Klabjan – ICML 2018 paper on Competitive Multi-agent Inverse Reinforcement Learning with Sub-optimal Demonstrations
 
