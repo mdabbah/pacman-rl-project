@@ -1,19 +1,16 @@
-import pandas as pd
 import numpy as np
 import pickle
 
-from jupyter_client.adapter import V4toV5
-
-from pacman import GameState, readCommand, ClassicGameRules
-from submission import AlphaBetaAgent, OptimalAgent, MultiAgentSearchAgent
-from ghostAgents import RandomGhost, OptimalGhost, GhostAgent, DirectionalGhost
+from pacman import readCommand, ClassicGameRules
+from submission import AlphaBetaAgent, OptimalAgent, MultiAgentSearchAgent, calc_approximate_reward
+from ghostAgents import OptimalGhost, GhostAgent, DirectionalGhost
 from typing import List, Dict
-from itertools import chain
 
 import torch
 from torch import nn
 import torch.nn.functional as F
 import time, sys
+from random import  shuffle
 
 logfile = 'log.txt'
 std_out_orig = sys.stdout
@@ -96,16 +93,17 @@ def apply_to_agents(agents, lam):
     for agent in agents:
         lam(agent)
 
+
 def Nash_GANs_training(Hero_agent: OptimalAgent, Villans: List[OptimalGhost], Kg: int, Kcycle: int,
                        R_model: RewardApprocimator, T=64, is_hero_update=True):
     """
-
-    :param R_model:
-    :param Hero_agent:
-    :param Villans:
-    :param Kg:
-    :param Kcycle:
-    :return:
+    this is algorithm 2 of the paper with the modified changes
+    :param R_model: NN of the rewards
+    :param Hero_agent: pacman NN agent
+    :param Villans: list of ghosts NN agents
+    :param Kg: must be less than Kcycle, represents the cycle duty invested training the villains
+    :param Kcycle: the length of the cycle
+    :return: estimation of the cumulative reward of pacman over T games
     """
     agent_to_train = 'pacman' if is_hero_update else 'ghosts'
     print("Entering Nash GANs training for " + agent_to_train)
@@ -165,22 +163,27 @@ def Nash_GANs_training(Hero_agent: OptimalAgent, Villans: List[OptimalGhost], Kg
     sys.stdout.log_unmute()
     V_f_mean = torch.tensor(V_f, device=Hero_agent.device).mean()
     V_g_mean = torch.tensor(V_g, device=Hero_agent.device).mean()
+    apply_to_agents(Villans + [Hero_agent], lambda a: a.reset_saved_stats())
     print('ended Nash training')
     print('Vf mean: {:} , Vg mean: {:} '.format(V_f_mean, V_g_mean))
-    if is_hero_update:
 
-        return torch.tensor(V_f, device=Hero_agent.device).mean()
-    else:
-        return torch.tensor(V_g, device=Hero_agent.device).mean()
+    return torch.tensor(V_f, device=Hero_agent.device).mean()
+
+    # if is_hero_update:
+    #
+    #     return torch.tensor(V_f, device=Hero_agent.device).mean()
+    # else:
+    #     return torch.tensor(V_g, device=Hero_agent.device).mean()
 
 
 def run_game(Hero_agent: MultiAgentSearchAgent, Villains: List[GhostAgent], starting_agent_idx):
     """
-
-    :param starting_agent_idx:
-    :param Hero_agent:
-    :param Villains:
-    :return:
+    runs the game given the pacman and ghost agents and the starting agent index
+    it samples a starting state from the recorded experts games
+    :param starting_agent_idx: which agent should start the game
+    :param Hero_agent: pacman
+    :param Villains: ghosts
+    :return: None
     """
     sampled_state = sample_starting_state(starting_agent_idx)
     start_command = ['-p', 'AlphaBetaAgent', '-l', 'smallClassic', '-q']
@@ -196,6 +199,35 @@ def move_to_device(device, agents):
         agent.to(device)
 
 
+def reward_pretraining(reward_model: RewardApprocimator, shuffles: int):
+    with open('./rec_games/all_games.list', 'rb') as f:
+        all_games = pickle.load(f)
+
+    reward_model.set_trainable(True)
+    for i in range(shuffles):
+
+        shuffle(all_games)
+        for g in all_games:
+            game_state, state_vec = g[0]
+            state_vector = torch.tensor(state_vec.flatten(), device=reward_model.device).float()
+            pred = reward_model(state_vector)
+            reward_guess = torch.tensor(calc_approximate_reward(game_state), device=reward_model.device).float()
+
+            loss = (reward_guess - pred)**2 #+ F.smooth_l1_loss(pred.squeeze(), torch.tensor([reward_guess],
+                                                   #                                               device=reward_model.device))
+
+            reward_model.optimizer.zero_grad()
+            loss.backward()
+
+            # if self.clip_grads:
+            #     for param in self.parameters():
+            #         param.grad.data.clamp_(-1, 1)
+
+            reward_model.optimizer.step()
+
+            print('loss is: ', loss.item())
+
+
 def IRL():
 
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
@@ -204,10 +236,22 @@ def IRL():
     R_optimizer = torch.optim.Adam(R.parameters(), lr=1e-2)
     R.set_optimizer(R_optimizer)
 
+    sys.stdout.log_mute()
+    reward_pretraining(R, 10)
+    sys.stdout.log_unmute()
+
+    models_dict = {
+        'reward_model': R.state_dict(),
+    }
+    time_str = time.strftime("%m-%d %H-%M-%S")
+    torch.save(models_dict, './checkpoints/rewards_pretratined_' + time_str)
+
+
+
     pacman_agent = OptimalAgent(R=R, device=device)
     pac_optimizer = torch.optim.Adam(pacman_agent.parameters(), lr=1e-2)
     pacman_agent.set_optimizer(pac_optimizer)
-    pacman_expert = AlphaBetaAgent()
+    pacman_expert = AlphaBetaAgent(depth=4)
 
     ghost_experts = [DirectionalGhost(index=1), DirectionalGhost(index=2)]
     ghost_agents = [OptimalGhost(index=1, R=R, device=device), OptimalGhost(index=2, R=R, device=device)]
@@ -216,17 +260,17 @@ def IRL():
         g.set_optimizer(opt)
 
     move_to_device(device, [pacman_agent] + ghost_agents)
-    K_G, K_cycle, K_R, I_R, T = 200, 1000, 10, 20, 50
+    K_G, K_cycle, K_R, I_R, T = 2000, 10000, 2, 200, 1000
     # K_G, K_cycle, K_R, I_R, T = 2, 4, 2, 2, 2
     p = 5
     Nash_TH = 1
 
     for reward_loop_idx in range(50000):
-        pacman_value = Nash_GANs_training(pacman_agent, ghost_agents, K_G, K_cycle, R, is_hero_update=True, T=T)
-        ghosts_value = Nash_GANs_training(pacman_agent, ghost_agents, K_cycle - K_G, K_cycle, R, T=T, is_hero_update=False)
+        pacman_best_value = Nash_GANs_training(pacman_agent, ghost_agents, K_G, K_cycle, R, is_hero_update=True, T=T)
+        ghosts_best_value = Nash_GANs_training(pacman_agent, ghost_agents, K_cycle - K_G, K_cycle, R, T=T, is_hero_update=False)
 
-        print("nash sum is :" + str(abs(pacman_value + ghosts_value)))
-        if reward_loop_idx % K_R == 0 and abs(pacman_value + ghosts_value) < Nash_TH:
+        print("nash sum is :" + str(abs(pacman_best_value - ghosts_best_value)))
+        if reward_loop_idx % K_R == 0 and abs(pacman_best_value - ghosts_best_value) < Nash_TH:
 
             print("REWARD UPDATE step")
             R.set_trainable(True)

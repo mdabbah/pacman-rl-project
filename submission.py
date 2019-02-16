@@ -12,6 +12,9 @@ from game import Actions
 from experiments import timer
 
 #     ********* Reflex agent- sections a and b *********
+from pacman import GameState
+
+
 class ReflexAgent(Agent):
     """
       A reflex agent chooses an action at each choice point by examining
@@ -544,7 +547,8 @@ class OptimalAgent(nn.Module, MultiAgentSearchAgent):
             all_actions = legal_actions
 
         if self.is_trainable or self.should_record:
-            self.actual_rewards.append(gameState.getScore() - self.prev_score)
+            # self.actual_rewards.append(gameState.getScore() - self.prev_score)
+            self.actual_rewards.append(calc_approximate_reward(gameState))
             self.prev_score = gameState.getScore()
             self.action_log_probs.append(pi_s.log_prob(chosen_action_idx))
             self.state_values.append(value)
@@ -635,3 +639,27 @@ class OptimalAgent(nn.Module, MultiAgentSearchAgent):
         del self.action_log_probs[:]
         del self.state_values[:]
         del self.actual_rewards[:]
+
+
+def calc_approximate_reward(game_state: GameState):
+
+
+    state_tensor = game_state.construct_state_tensor()
+
+    # get my position
+    my_pos = game_state.getPacmanPosition()
+
+    # gt = gameState.construct_state_tensor()
+    manhattan_dists_from_ghosts = [util.manhattanDistance(my_pos, pos) for pos in game_state.getGhostPositions()]
+
+    num_foods = np.sum(state_tensor[0])
+    num_capsules = np.sum(state_tensor[4])
+    ghosts_scared = [ghost_state.scaredTimer > 0 for ghost_state in game_state.getGhostStates()]
+
+    if manhattan_dists_from_ghosts:
+        min_dist_from_ghost = min(manhattan_dists_from_ghosts)
+        min_dist_from_ghost = -min_dist_from_ghost if ghosts_scared else min_dist_from_ghost
+
+        return -1*num_foods*10 -1*num_capsules*30 + min_dist_from_ghost
+
+    return -1*num_foods*10 -1*num_capsules*30

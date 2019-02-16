@@ -1,276 +1,142 @@
-ended Nash training
-Vf mean: -129.27540588378906 , Vg mean: 126.75847625732422 
-Entering Nash GANs training for ghosts
-ended Nash training
-Vf mean: -927.9945068359375 , Vg mean: 910.3181762695312 
-nash sum is :tensor(781.0428, device='cuda:0')
 Entering Nash GANs training for pacman
 ended Nash training
-Vf mean: -573.9083862304688 , Vg mean: 559.9813842773438 
+Vf mean: -31516.12109375 , Vg mean: 30662.708984375 
 Entering Nash GANs training for ghosts
 ended Nash training
-Vf mean: -1293.397705078125 , Vg mean: 1262.99462890625 
-nash sum is :tensor(689.0862, device='cuda:0')
+Vf mean: -109684.3671875 , Vg mean: 106580.40625 
+nash sum is :tensor(78168.2500, device='cuda:0')
+Entering Nash GANs training for pacman
 Entering Nash GANs training for pacman
 ended Nash training
-Vf mean: -4904.19091796875 , Vg mean: 4848.04052734375 
+Vf mean: -12231.8681640625 , Vg mean: 11892.048828125 
 Entering Nash GANs training for ghosts
 ended Nash training
-Vf mean: -3803.146728515625 , Vg mean: 3732.540771484375 
-nash sum is :tensor(1171.6501, device='cuda:0')
+Vf mean: -150384.078125 , Vg mean: 145991.140625 
+nash sum is :tensor(138152.2031, device='cuda:0')
 Entering Nash GANs training for pacman
 ended Nash training
-Vf mean: -4365.6962890625 , Vg mean: 4286.0107421875 
+Vf mean: -198414.109375 , Vg mean: 189850.1875 
 Entering Nash GANs training for ghosts
 ended Nash training
-Vf mean: -5236.96044921875 , Vg mean: 5135.51025390625 
-nash sum is :tensor(769.8140, device='cuda:0')
+Vf mean: -17758.82421875 , Vg mean: 17667.1015625 
+nash sum is :tensor(180655.2812, device='cuda:0')
 Entering Nash GANs training for pacman
 ended Nash training
-Vf mean: -3526.234375 , Vg mean: 3434.75146484375 
+Vf mean: -22695.14453125 , Vg mean: 22563.228515625 
 Entering Nash GANs training for ghosts
 ended Nash training
-Vf mean: -3121.637939453125 , Vg mean: 3045.05712890625 
-nash sum is :tensor(481.1772, device='cuda:0')
+Vf mean: -49260.671875 , Vg mean: 48916.94921875 
+nash sum is :tensor(26565.5273, device='cuda:0')
 Entering Nash GANs training for pacman
 ended Nash training
-Vf mean: -7134.3056640625 , Vg mean: 7016.67236328125 
+Vf mean: -69985.6875 , Vg mean: 69557.1875 
 Entering Nash GANs training for ghosts
 ended Nash training
-Vf mean: -9233.068359375 , Vg mean: 9074.0263671875 
-nash sum is :tensor(1939.7207, device='cuda:0')
+Vf mean: -95582.3828125 , Vg mean: 94965.0625 
+nash sum is :tensor(25596.6953, device='cuda:0')
 Entering Nash GANs training for pacman
 ended Nash training
-Vf mean: -7302.958984375 , Vg mean: 7173.59228515625 
+Vf mean: -111970.4375 , Vg mean: 111323.5078125 
 Entering Nash GANs training for ghosts
 ended Nash training
-Vf mean: -6782.763671875 , Vg mean: 6601.927734375 
-nash sum is :tensor(701.0312, device='cuda:0')
+Vf mean: -150399.0 , Vg mean: 149508.421875 
+nash sum is :tensor(38428.5625, device='cuda:0')
 Entering Nash GANs training for pacman
 ended Nash training
-Vf mean: -6519.93310546875 , Vg mean: 6371.3896484375 
+Vf mean: -157333.734375 , Vg mean: 156381.375 
 Entering Nash GANs training for ghosts
 ended Nash training
-Vf mean: -3829.6748046875 , Vg mean: 3724.1875 
-nash sum is :tensor(2795.7456, device='cuda:0')
+Vf mean: -223185.828125 , Vg mean: 221977.0625 
+nash sum is :tensor(65852.0938, device='cuda:0')
 Entering Nash GANs training for pacman
 ended Nash training
-Vf mean: -8479.0703125 , Vg mean: 8326.111328125 
+Vf mean: -180456.265625 , Vg mean: 179213.328125 
 Entering Nash GANs training for ghosts
 ended Nash training
-Vf mean: -12771.2822265625 , Vg mean: 12545.408203125 
-nash sum is :tensor(4066.3379, device='cuda:0')
+Vf mean: -208900.859375 , Vg mean: 207515.421875 
+nash sum is :tensor(28444.5938, device='cuda:0')
 Entering Nash GANs training for pacman
 ended Nash training
-Vf mean: -13390.5859375 , Vg mean: 13192.3359375 
+Vf mean: -279893.8125 , Vg mean: 278238.1875 
 Entering Nash GANs training for ghosts
 ended Nash training
-Vf mean: -12043.9326171875 , Vg mean: 11800.3896484375 
-nash sum is :tensor(1590.1963, device='cuda:0')
+Vf mean: -303600.34375 , Vg mean: 301822.25 
+nash sum is :tensor(23706.5312, device='cuda:0')
 Entering Nash GANs training for pacman
 ended Nash training
-Vf mean: -21768.275390625 , Vg mean: 21473.689453125 
+Vf mean: -340150.21875 , Vg mean: 338413.15625 
 Entering Nash GANs training for ghosts
 ended Nash training
-Vf mean: -18619.734375 , Vg mean: 18354.388671875 
-nash sum is :tensor(3413.8867, device='cuda:0')
+Vf mean: -311611.78125 , Vg mean: 309575.3125 
+nash sum is :tensor(28538.4375, device='cuda:0')
 Entering Nash GANs training for pacman
 ended Nash training
-Vf mean: -9739.2880859375 , Vg mean: 9485.572265625 
+Vf mean: -418520.34375 , Vg mean: 416183.0625 
 Entering Nash GANs training for ghosts
 ended Nash training
-Vf mean: -19454.69921875 , Vg mean: 19094.568359375 
-nash sum is :tensor(9355.2803, device='cuda:0')
+Vf mean: -389914.0625 , Vg mean: 387663.5 
+nash sum is :tensor(28606.2812, device='cuda:0')
 Entering Nash GANs training for pacman
 ended Nash training
-Vf mean: -25511.2578125 , Vg mean: 25196.349609375 
+Vf mean: -471576.09375 , Vg mean: 469048.125 
 Entering Nash GANs training for ghosts
 ended Nash training
-Vf mean: -22671.03125 , Vg mean: 22321.375 
-nash sum is :tensor(3189.8828, device='cuda:0')
+Vf mean: -424061.40625 , Vg mean: 421415.53125 
+nash sum is :tensor(47514.6875, device='cuda:0')
 Entering Nash GANs training for pacman
 ended Nash training
-Vf mean: -12611.328125 , Vg mean: 12374.404296875 
+Vf mean: -358373.1875 , Vg mean: 355875.15625 
 Entering Nash GANs training for ghosts
 ended Nash training
-Vf mean: -22829.16015625 , Vg mean: 22514.115234375 
-nash sum is :tensor(9902.7871, device='cuda:0')
+Vf mean: -521046.15625 , Vg mean: 517904.03125 
+nash sum is :tensor(162672.9688, device='cuda:0')
 Entering Nash GANs training for pacman
 ended Nash training
-Vf mean: -18703.958984375 , Vg mean: 18340.029296875 
+Vf mean: -491150.3125 , Vg mean: 488218.90625 
 Entering Nash GANs training for ghosts
 ended Nash training
-Vf mean: -14461.03515625 , Vg mean: 14138.4873046875 
-nash sum is :tensor(4565.4717, device='cuda:0')
+Vf mean: -590763.4375 , Vg mean: 587702.1875 
+nash sum is :tensor(99613.1250, device='cuda:0')
 Entering Nash GANs training for pacman
 ended Nash training
-Vf mean: -15086.76171875 , Vg mean: 14807.8056640625 
+Vf mean: -479568.59375 , Vg mean: 476347.15625 
 Entering Nash GANs training for ghosts
 ended Nash training
-Vf mean: -33921.05078125 , Vg mean: 33453.3828125 
-nash sum is :tensor(18366.6211, device='cuda:0')
+Vf mean: -645893.125 , Vg mean: 642384.4375 
+nash sum is :tensor(166324.5312, device='cuda:0')
 Entering Nash GANs training for pacman
 ended Nash training
-Vf mean: -19589.404296875 , Vg mean: 19192.8359375 
+Vf mean: -617178.625 , Vg mean: 613631.5 
 Entering Nash GANs training for ghosts
 ended Nash training
-Vf mean: -25829.861328125 , Vg mean: 25489.982421875 
-nash sum is :tensor(5900.5781, device='cuda:0')
+Vf mean: -583868.0625 , Vg mean: 580317.4375 
+nash sum is :tensor(33310.5625, device='cuda:0')
 Entering Nash GANs training for pacman
 ended Nash training
-Vf mean: -16650.73828125 , Vg mean: 16267.1279296875 
+Vf mean: -591190.25 , Vg mean: 587269.4375 
 Entering Nash GANs training for ghosts
 ended Nash training
-Vf mean: -19996.689453125 , Vg mean: 19598.59375 
-nash sum is :tensor(2947.8555, device='cuda:0')
+Vf mean: -646507.4375 , Vg mean: 642711.5625 
+nash sum is :tensor(55317.1875, device='cuda:0')
 Entering Nash GANs training for pacman
 ended Nash training
-Vf mean: -27257.619140625 , Vg mean: 26712.76171875 
+Vf mean: -637660.5 , Vg mean: 633536.9375 
 Entering Nash GANs training for ghosts
 ended Nash training
-Vf mean: -31339.24609375 , Vg mean: 30988.138671875 
-nash sum is :tensor(3730.5195, device='cuda:0')
+Vf mean: -643372.3125 , Vg mean: 639274.5625 
+nash sum is :tensor(5711.8125, device='cuda:0')
 Entering Nash GANs training for pacman
 ended Nash training
-Vf mean: -29483.859375 , Vg mean: 29014.029296875 
+Vf mean: -941798.4375 , Vg mean: 936991.8125 
 Entering Nash GANs training for ghosts
 ended Nash training
-Vf mean: -20060.919921875 , Vg mean: 19554.8671875 
-nash sum is :tensor(9928.9922, device='cuda:0')
+Vf mean: -853685.0625 , Vg mean: 849139.625 
+nash sum is :tensor(88113.3750, device='cuda:0')
 Entering Nash GANs training for pacman
 ended Nash training
-Vf mean: -15284.4375 , Vg mean: 14850.8271484375 
+Vf mean: -823441.625 , Vg mean: 818812.0625 
 Entering Nash GANs training for ghosts
 ended Nash training
-Vf mean: -24688.333984375 , Vg mean: 24076.15625 
-nash sum is :tensor(8791.7188, device='cuda:0')
+Vf mean: -659613.5 , Vg mean: 655091.375 
+nash sum is :tensor(163828.1250, device='cuda:0')
 Entering Nash GANs training for pacman
-ended Nash training
-Vf mean: -25930.859375 , Vg mean: 25442.08203125 
-Entering Nash GANs training for ghosts
-ended Nash training
-Vf mean: -24426.20703125 , Vg mean: 24004.603515625 
-nash sum is :tensor(1926.2559, device='cuda:0')
-Entering Nash GANs training for pacman
-ended Nash training
-Vf mean: -39877.90625 , Vg mean: 39285.7421875 
-Entering Nash GANs training for ghosts
-ended Nash training
-Vf mean: -18140.828125 , Vg mean: 17547.462890625 
-nash sum is :tensor(22330.4434, device='cuda:0')
-Entering Nash GANs training for pacman
-ended Nash training
-Vf mean: -24957.375 , Vg mean: 24555.466796875 
-Entering Nash GANs training for ghosts
-ended Nash training
-Vf mean: -30696.267578125 , Vg mean: 30075.9296875 
-nash sum is :tensor(5118.5547, device='cuda:0')
-Entering Nash GANs training for pacman
-ended Nash training
-Vf mean: -42059.51953125 , Vg mean: 41657.6328125 
-Entering Nash GANs training for ghosts
-ended Nash training
-Vf mean: -18637.947265625 , Vg mean: 18193.76953125 
-nash sum is :tensor(23865.7500, device='cuda:0')
-Entering Nash GANs training for pacman
-ended Nash training
-Vf mean: -64276.96484375 , Vg mean: 63595.95703125 
-Entering Nash GANs training for ghosts
-ended Nash training
-Vf mean: -31945.138671875 , Vg mean: 31319.83203125 
-nash sum is :tensor(32957.1328, device='cuda:0')
-Entering Nash GANs training for pacman
-ended Nash training
-Vf mean: -27521.609375 , Vg mean: 26883.083984375 
-Entering Nash GANs training for ghosts
-ended Nash training
-Vf mean: -68375.9296875 , Vg mean: 67667.78125 
-nash sum is :tensor(40146.1719, device='cuda:0')
-Entering Nash GANs training for pacman
-ended Nash training
-Vf mean: -43182.55859375 , Vg mean: 42575.07421875 
-Entering Nash GANs training for ghosts
-ended Nash training
-Vf mean: -48556.23828125 , Vg mean: 47837.19921875 
-nash sum is :tensor(4654.6406, device='cuda:0')
-Entering Nash GANs training for pacman
-ended Nash training
-Vf mean: -31317.787109375 , Vg mean: 30600.62890625 
-Entering Nash GANs training for ghosts
-ended Nash training
-Vf mean: -33828.41015625 , Vg mean: 33114.74609375 
-nash sum is :tensor(1796.9590, device='cuda:0')
-Entering Nash GANs training for pacman
-ended Nash training
-Vf mean: -47659.16796875 , Vg mean: 47036.875 
-Entering Nash GANs training for ghosts
-ended Nash training
-Vf mean: -43291.5625 , Vg mean: 42663.46875 
-nash sum is :tensor(4995.6992, device='cuda:0')
-Entering Nash GANs training for pacman
-ended Nash training
-Vf mean: -42555.109375 , Vg mean: 41806.48046875 
-Entering Nash GANs training for ghosts
-ended Nash training
-Vf mean: -24188.791015625 , Vg mean: 23600.109375 
-nash sum is :tensor(18955., device='cuda:0')
-Entering Nash GANs training for pacman
-ended Nash training
-Vf mean: -21857.15234375 , Vg mean: 21341.62109375 
-Entering Nash GANs training for ghosts
-ended Nash training
-Vf mean: -58733.07421875 , Vg mean: 57881.12890625 
-nash sum is :tensor(36023.9766, device='cuda:0')
-Entering Nash GANs training for pacman
-ended Nash training
-Vf mean: -35990.34375 , Vg mean: 35236.27734375 
-Entering Nash GANs training for ghosts
-ended Nash training
-Vf mean: -37679.68359375 , Vg mean: 37061.8984375 
-nash sum is :tensor(1071.5547, device='cuda:0')
-Entering Nash GANs training for pacman
-ended Nash training
-Vf mean: -25037.25 , Vg mean: 24320.263671875 
-Entering Nash GANs training for ghosts
-ended Nash training
-Vf mean: -13377.703125 , Vg mean: 12832.6962890625 
-nash sum is :tensor(12204.5537, device='cuda:0')
-Entering Nash GANs training for pacman
-ended Nash training
-Vf mean: -44553.578125 , Vg mean: 43929.953125 
-Entering Nash GANs training for ghosts
-ended Nash training
-Vf mean: -38664.4140625 , Vg mean: 37764.0859375 
-nash sum is :tensor(6789.4922, device='cuda:0')
-Entering Nash GANs training for pacman
-ended Nash training
-Vf mean: -37399.19140625 , Vg mean: 36618.9375 
-Entering Nash GANs training for ghosts
-ended Nash training
-Vf mean: -32987.33984375 , Vg mean: 32419.466796875 
-nash sum is :tensor(4979.7246, device='cuda:0')
-Entering Nash GANs training for pacman
-ended Nash training
-Vf mean: -36547.27734375 , Vg mean: 35580.29296875 
-Entering Nash GANs training for ghosts
-ended Nash training
-Vf mean: -25242.99609375 , Vg mean: 24741.228515625 
-nash sum is :tensor(11806.0488, device='cuda:0')
-Entering Nash GANs training for pacman
-ended Nash training
-Vf mean: -30072.455078125 , Vg mean: 29372.205078125 
-Entering Nash GANs training for ghosts
-ended Nash training
-Vf mean: -18848.486328125 , Vg mean: 18352.681640625 
-nash sum is :tensor(11719.7734, device='cuda:0')
-Entering Nash GANs training for pacman
-ended Nash training
-Vf mean: -39884.67578125 , Vg mean: 39227.98828125 
-Entering Nash GANs training for ghosts
-ended Nash training
-Vf mean: -20639.83203125 , Vg mean: 19880.19140625 
-nash sum is :tensor(20004.4844, device='cuda:0')
-Entering Nash GANs training for pacman
-ended Nash training
-Vf mean: -41786.1328125 , Vg mean: 41059.6953125 
-Entering Nash GANs training for ghosts
